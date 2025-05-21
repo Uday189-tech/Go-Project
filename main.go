@@ -6,10 +6,17 @@ import (
 )
 
 func main() {
-	a := 5
-	b := 10
+	a := 20.0
+	b := 10.0
 
-	sum := calc.Add(a, b)
+	fmt.Println("Addition:", calc.Add(a, b))
+	fmt.Println("Subtraction:", calc.Subtract(a, b))
+	fmt.Println("Multiplication:", calc.Multiply(a, b))
 
-	fmt.Println("Sum:", sum)
+	result, err := calc.Divide(a, b)
+	if err != nil {
+		fmt.Println("Error in division:", err)
+	} else {
+		fmt.Println("Division:", result)
+	}
 }
